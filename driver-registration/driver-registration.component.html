@@ -1,0 +1,24 @@
+<div class="login">
+    <form id="driverregistration" [form ]="form" (ngSubmit)="onSubmit()">
+        <form id="login" [formGroup]="myDriverRegistration" (ngSubmit)="onSubmit()"></form>
+        <!-- <form action="/action_page.php"></form> -->
+        <legend>DRIVER REGISTRATION</legend>
+        <label for="lname">Driver Name : </label>
+        <input type="text" id="lname" name="lname"> <br>
+        <br>
+        <label for="phone">Phone Number </label>
+        <input type="text" id="phone" name="phone"> <br>
+        <br>
+        <label for="licence">Licence Number : </label>
+        <input type="text" id="licence" name="licence"><br>
+        <br>
+        <label for="licence">Licence Validity : </label>
+        <input type="text" id="licence" name="licence"><br>
+        <br>
+        <label>Licence Image</label>
+        <br>
+        <input type="" id="image" name="licence">
+
+        <div class="d-grid mt-3">
+            <button class="btn btn-primary" [disabled]="!myDriverRegistration.valid" type="submit">Submit</button>
+        </div>

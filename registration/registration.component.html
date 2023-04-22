@@ -1,0 +1,93 @@
+<div class="row bg1">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h2 style="align-self: center;
+        color: #fff;">REGISTRATION FORM</h2>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <div clas width="center">
+                        <label>First Name: </label>
+                        <input type="text" formControlName="fname" style="width: 100%;" class="form-control mb-2">
+                        <div *ngIf="m.fname.touched && m.fname.invalid" class="alert alert-danger">
+                            <div *ngIf="m.fname.errors?.required">Please enter first name</div>
+                            <div *ngIf="m.fname.errors?.pattern">Please enter only alphabet characters</div>
+                        </div>
+                    </div>
+
+                    <label>Last Name: </label>
+                    <input type="text" formControlName="lname" style="width: 100%;" class="form-control mb-2">
+                    <div *ngIf="m.lname.touched && m.lname.invalid" class="alert alert-danger">
+                        <div *ngIf="m.lname.errors?.required">Please enter last name</div>
+                        <div *ngIf="m.lname.errors?.pattern">Please enter only alphabet characters</div>
+                    </div>
+
+                    <label>Mobile number: </label>
+                    <input type="text" formControlName="mob" style="width: 100%;" [minLength]="10" maxlength="14"
+                        class="form-control mb-2">
+                    <div *ngIf="m.mob.touched && m.mob.invalid" class="alert alert-danger">
+                        <div *ngIf="m.mob.errors?.required">Please enter mobile number</div>
+                        <div *ngIf="m.mob.errors?.pattern">Mobile number is not 10 digit</div>
+                    </div>
+
+                    <label>Email: </label>
+                    <input type="text" formControlName="email" style="width: 100%;" class="form-control mb-2">
+                    <div *ngIf="m.email.touched && m.email.invalid" class="alert alert-danger">
+                        <div *ngIf="m.email.errors?.required">Please enter email</div>
+                        <div *ngIf="m.email.errors?.pattern">Please enter correct email address</div><br>
+                    </div>
+                    <br>
+
+                    <div>
+                        <label for="gender"> Select you gender: </label>
+                        <select name="gender">
+
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+
+                            <input type="radio" name="gender" value="male"> Male<br>
+                            <input type="radio" name="gender" value="female"> Female<br>
+                        </select>
+                    </div>
+
+                    <div>
+                        <tr>
+                            <td>
+                                <label>Choose your favourite hobbies</label>
+                            </td>
+
+                            <td>
+                                <br>
+                                <label>
+                                    <input type="checkbox" checked> Driving
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox"> Listening Songs
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="city">City</label>
+                            </td>
+                            <td>
+                                <select id="city" name="city">
+                                    <option disabled selected>--Choose City--</option>
+                                    <optgroup label="Metros">
+                                        <option>New Delhi</option>
+                                        <option>Mumbai</option>
+                                        <option>Chennai</option>
+                                        <option>Kolkata</option>
+                                    </optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                    </div>
+                    <div class="d-grid mt-3">
+                        <button class="btn btn-primary" [disabled]="!myRegistrationForm.valid" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

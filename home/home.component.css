@@ -1,0 +1,23 @@
+.navbar {
+  background-color: #02314D;
+  color: rgb(255, 255, 255);
+}
+
+.btn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  background-color: #7e0000;
+  color: rgb(255, 255, 255);
+}
+
+.dropdown-menu {
+  background-color: #7e0000;
+  min-width: 7rem;
+}
+
+
+/* */
